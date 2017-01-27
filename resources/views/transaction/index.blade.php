@@ -33,7 +33,7 @@
         </h2>
         <br>
         <div class="panel panel-default">
-          <div class="panel-body">
+          <div class="panel-body transaction_id">
             <strong>Transaction ID:</strong> {{ $transaction->trx_id }}
           </div>
         </div>
@@ -41,10 +41,18 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <strong>Seller:</strong> {{ $transaction->seller_name }} <br>
-          <strong>Delivery Service:</strong> TIKI <br>
-          <strong>Order Date:</strong> {{ $transaction->date_order }} <br>
-          <strong>Address Shipment:</strong> KAMPUNG DATOK KERAMAT <br>
+          <div class="seller_name">
+            <strong>Seller:</strong> {{ $transaction->seller_name }} <br>
+          </div>
+          <div class="delivery_service">
+            <strong>Delivery Service:</strong> TIKI <br>
+          </div>
+          <div class="order_date">
+            <strong>Order Date:</strong> {{ $transaction->date_order }} <br>
+          </div>
+          <div class="address_shipment">
+            <strong>Address Shipment:</strong> KAMPUNG DATOK KERAMAT <br>
+          </div>
           <br>
           <p><a class="btn btn-default" href="{{ url('/') }}" role="button">Main Menu</a></p>
         </div>
