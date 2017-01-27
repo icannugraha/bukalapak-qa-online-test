@@ -1,40 +1,64 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Bukalapak QA Engineer Online Test
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Laravel 5.4 (Laravel Dusk)
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+### Install
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Clone this repository
+```
+git clone https://github.com/icannugraha/bukalapak-qa-online-test.git
+```
+Change to project directory
+```
+cd bukalapak-qa-online-test (or whatever you name it)
+```
+Install dependencies
+```
+composer install
+```
+Configure .env file
+```
+cp .env.example .env
+```
+Then setup your Database connection (connection, database name, credential)
+```
+DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+```
+Database Migration
+```
+php artisan migrate
+```
+Seed Database
+```
+php artisan db:seed
+```
+Run Laravel Dusk
+```
+php artisan dusk
+```
+It will open up your browser and do the transaction test automatically.
+```
+PHPUnit 5.7.8 by Sebastian Bergmann and contributors.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+F                                                                  1 / 1 (100%)
 
-## Learning Laravel
+Time: 11.3 seconds, Memory: 10.00MB
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+There was 1 failure:
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+1) Tests\Browser\TransactionTest::testTransactionDetail
+Did not see expected text [REX] within element [body .delivery_service].
+Failed asserting that false is true.
 
-## Contributing
+...\vendor\laravel\dusk\src\Concerns\MakesAssertions.php:139
+...\vendor\laravel\dusk\src\Concerns\MakesAssertions.php:110
+...\tests\Browser\TransactionTest.php:25
+...\vendor\laravel\dusk\src\TestCase.php:88
+...\tests\Browser\TransactionTest.php:28
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+FAILURES!
+Tests: 1, Assertions: 4, Failures: 1.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+```
+It shows that the browser did not display the expected result which should be ` REX ` in `body` & element that has `delivery_service` class attribute
