@@ -19,12 +19,12 @@ class TransactionTest extends DuskTestCase
 
         $this->browse(function ($browser) use ($transaction) {
             $browser->visit('/01023A9AC')
-                    ->assertSee('Transaction Successful!') /* Check if it displays 'Transaction Successful' message */
-                    ->assertSee($transaction->trx_id) /* check if it displays the correct transaction ID */
-                    ->assertSee($transaction->seller_name) /* check if it displays the correct seller name based on the trx_id */
-                    ->assertSee($transaction->delivery_service) /* check if it displays the correct delivery service based on the trx_id */
-                    ->assertSee($transaction->date_order) /* check if it displays the correct date order based on the trx_id */
-                    ->assertSee($transaction->address_ship); /* check if it displays the correct address based on the trx_id */
+                    ->assertSeeIn('.jumbotron', 'Transaction Successful!') /* Check if it displays 'Transaction Successful' message */
+                    ->assertSeeIn('.transaction_id', $transaction->trx_id) /* check if it displays the correct transaction ID */
+                    ->assertSeeIn('.seller_name', $transaction->seller_name) /* check if it displays the correct seller name based on the trx_id */
+                    ->assertSeeIn('.delivery_service', $transaction->delivery_service) /* check if it displays the correct delivery service based on the trx_id */
+                    ->assertSeeIn('.order_date', $transaction->date_order) /* check if it displays the correct date order based on the trx_id */
+                    ->assertSeeIn('.address_shipment', $transaction->address_ship); /* check if it displays the correct address based on the trx_id */
         });
     }
 }
