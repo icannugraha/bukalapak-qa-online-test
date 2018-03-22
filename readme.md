@@ -29,6 +29,11 @@ cp .env.example .env
 
 2. Then setup your Database connection (connection, database name, credential)
 ```shell
+# Edit .env file using Nano
+nano .env
+# Edit .env file using Vim
+vim .env
+
 # .env EXAMPLE
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -76,7 +81,7 @@ php artisan key:generate
 ```
 
 
-2 Run Laravel Dusk
+2. Run Laravel Dusk
 ```shell
 php artisan dusk
 ```
