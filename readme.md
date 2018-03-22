@@ -29,7 +29,13 @@ cp .env.example .env
 
 2. Then setup your Database connection (connection, database name, credential)
 ```shell
-DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+# .env EXAMPLE
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_dusk
+DB_USERNAME=root
+DB_PASSWORD=root
 ```
 
 ## Migration
