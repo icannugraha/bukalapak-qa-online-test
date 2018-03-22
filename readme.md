@@ -25,15 +25,12 @@ composer install
 1. Configure .env file
 ```shell
 cp .env.example .env
+
+nano .env
 ```
 
 2. Then setup your Database connection (connection, database name, credential)
 ```shell
-# Edit .env file using Nano
-nano .env
-# Edit .env file using Vim
-vim .env
-
 # .env EXAMPLE
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -81,18 +78,23 @@ php artisan key:generate
 ```
 
 
-2. Run Laravel Dusk
+2. Run the App
+```shell
+php artisan serve
+```
+
+3. Open new Terminal/Shell/CMD and Run Laravel Dusk
 ```shell
 php artisan dusk
 ```
 
-3. It will open your browser and do the transaction test automatically. This is the test result:
+4. It will open your browser and do the transaction test automatically. This is the test result:
 ```shell
 PHPUnit 5.7.8 by Sebastian Bergmann and contributors.
 
-F                                                                  1 / 1 (100%)
+F                                                                   1 / 1 (100%)
 
-Time: 11.3 seconds, Memory: 10.00MB
+Time: 1.42 seconds, Memory: 10.00MB
 
 There was 1 failure:
 
@@ -100,15 +102,15 @@ There was 1 failure:
 Did not see expected text [REX] within element [body .delivery_service].
 Failed asserting that false is true.
 
-...\vendor\laravel\dusk\src\Concerns\MakesAssertions.php:139
-...\vendor\laravel\dusk\src\Concerns\MakesAssertions.php:110
-...\tests\Browser\TransactionTest.php:25
-...\vendor\laravel\dusk\src\TestCase.php:88
-...\tests\Browser\TransactionTest.php:28
+/home/username/code/laravel/laravel-dusk-simple-test/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:139
+/home/username/code/laravel/laravel-dusk-simple-test/tests/Browser/TransactionTest.php:25
+/home/username/code/laravel/laravel-dusk-simple-test/vendor/laravel/dusk/src/TestCase.php:88
+/home/username/code/laravel/laravel-dusk-simple-test/tests/Browser/TransactionTest.php:28
 
 FAILURES!
 Tests: 1, Assertions: 4, Failures: 1.
-
 ```
 
-3. It shows that the browser did not display the expected result which should be ` REX ` in `body` & element that has `delivery_service` class attribute
+5. The test result explains that the browser is not displaying `REX` within `body` element that has `delivery_service` class attribute.
+
+##### That's all. Thank you.
