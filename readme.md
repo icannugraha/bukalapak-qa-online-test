@@ -6,52 +6,52 @@ Laravel 5.4 (Laravel Dusk)
 ## Getting Started
 
 1. Clone this repository
-```bash
+```shell
 git clone https://github.com/ienugr/laravel-dusk-simple-test.git
 ```
 
 2. Change to project directory
-```bash
-cd bukalapak-qa-online-test (or whatever you name it)
+```shell
+cd laravel-dusk-simple-test # or whatever you name it
 ```
 
 3. Install dependencies
-```bash
+```shell
 composer install
 ```
 
 ## Environment Setup
 
 1. Configure .env file
-```bash
+```shell
 cp .env.example .env
 ```
 
 2. Then setup your Database connection (connection, database name, credential)
-```bash
+```shell
 DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
 ```
 
 ## Migration
 
 1. Database Migration
-```bash
+```shell
 php artisan migrate
 ```
 2. Seed Database
-```bash
+```shell
 php artisan db:seed
 ```
 
 ## Run Laravel Dusk
 
 1. Run Laravel Dusk
-```bash
+```shell
 php artisan dusk
 ```
 
 2. It will open your browser and do the transaction test automatically. This is the test result:
-```bash
+```shell
 PHPUnit 5.7.8 by Sebastian Bergmann and contributors.
 
 F                                                                  1 / 1 (100%)
