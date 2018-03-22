@@ -14,5 +14,5 @@
 Route::get('/{trx_id}', 'TransactionController@index');
 
 Route::get('/', function () {
-	return 'Ismandra Eka Nugraha <br> ienugr@yahoo.com <br> Bukalapak QA Test';
+	return view('welcome');
 });
