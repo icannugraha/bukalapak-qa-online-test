@@ -1,44 +1,57 @@
-# Bukalapak QA Engineer Online Test
+# Laravel Dusk - Simple Test
 
 Laravel 5.4 (Laravel Dusk)
 
 
-### Install
+## Getting Started
 
-Clone this repository
-```
+1. Clone this repository
+```bash
 git clone https://github.com/icannugraha/bukalapak-qa-online-test.git
 ```
-Change to project directory
-```
+
+2. Change to project directory
+```bash
 cd bukalapak-qa-online-test (or whatever you name it)
 ```
-Install dependencies
-```
+
+3. Install dependencies
+```bash
 composer install
 ```
-Configure .env file
-```
+
+## Environment Setup
+
+1. Configure .env file
+```bash
 cp .env.example .env
 ```
-Then setup your Database connection (connection, database name, credential)
-```
+
+2. Then setup your Database connection (connection, database name, credential)
+```bash
 DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
 ```
-Database Migration
-```
+
+## Migration
+
+1. Database Migration
+```bash
 php artisan migrate
 ```
-Seed Database
-```
+2. Seed Database
+```bash
 php artisan db:seed
 ```
-Run Laravel Dusk
-```
+
+## Run Laravel Dusk
+
+1. Run Laravel Dusk
+```bash
 php artisan dusk
 ```
-It will open up your browser and do the transaction test automatically.
-```
+
+2. It will open your browser and do the transaction test automatically. This is the test result:
+```bash
 PHPUnit 5.7.8 by Sebastian Bergmann and contributors.
 
 F                                                                  1 / 1 (100%)
@@ -61,4 +74,5 @@ FAILURES!
 Tests: 1, Assertions: 4, Failures: 1.
 
 ```
-It shows that the browser did not display the expected result which should be ` REX ` in `body` & element that has `delivery_service` class attribute
+
+3. It shows that the browser did not display the expected result which should be ` REX ` in `body` & element that has `delivery_service` class attribute
