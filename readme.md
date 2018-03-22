@@ -7,7 +7,7 @@ Laravel 5.4 (Laravel Dusk)
 
 1. Clone this repository
 ```bash
-git clone https://github.com/icannugraha/bukalapak-qa-online-test.git
+git clone https://github.com/ienugr/laravel-dusk-simple-test.git
 ```
 
 2. Change to project directory
